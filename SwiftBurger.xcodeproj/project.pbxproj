@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5808E9AB1BFED5AF00A85FED /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5808E9AA1BFED5AF00A85FED /* ListViewController.swift */; };
+		5808E9AF1BFEE05C00A85FED /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5808E9AE1BFEE05C00A85FED /* PictureViewController.swift */; };
 		584104D61BFD8674006BF83F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584104D51BFD8674006BF83F /* AppDelegate.swift */; };
 		584104D81BFD8674006BF83F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584104D71BFD8674006BF83F /* ViewController.swift */; };
 		584104DB1BFD8674006BF83F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584104D91BFD8674006BF83F /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5808E9AA1BFED5AF00A85FED /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		5808E9AE1BFEE05C00A85FED /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureViewController.swift; path = ../PictureViewController.swift; sourceTree = "<group>"; };
 		584104D21BFD8674006BF83F /* SwiftBurger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBurger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584104D51BFD8674006BF83F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		584104D71BFD8674006BF83F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,13 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				584104D51BFD8674006BF83F /* AppDelegate.swift */,
-				584104D71BFD8674006BF83F /* ViewController.swift */,
-				584104E71BFD87AD006BF83F /* HamburgerViewController.swift */,
-				584104E91BFDA586006BF83F /* FizzViewController.swift */,
-				584104D91BFD8674006BF83F /* Main.storyboard */,
 				584104DC1BFD8674006BF83F /* Assets.xcassets */,
-				584104DE1BFD8674006BF83F /* LaunchScreen.storyboard */,
+				584104E91BFDA586006BF83F /* FizzViewController.swift */,
+				584104E71BFD87AD006BF83F /* HamburgerViewController.swift */,
 				584104E11BFD8674006BF83F /* Info.plist */,
+				584104DE1BFD8674006BF83F /* LaunchScreen.storyboard */,
+				5808E9AA1BFED5AF00A85FED /* ListViewController.swift */,
+				584104D91BFD8674006BF83F /* Main.storyboard */,
+				5808E9AE1BFEE05C00A85FED /* PictureViewController.swift */,
+				584104D71BFD8674006BF83F /* ViewController.swift */,
 			);
 			path = SwiftBurger;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 				584104E81BFD87AD006BF83F /* HamburgerViewController.swift in Sources */,
 				584104EA1BFDA586006BF83F /* FizzViewController.swift in Sources */,
 				584104D81BFD8674006BF83F /* ViewController.swift in Sources */,
+				5808E9AF1BFEE05C00A85FED /* PictureViewController.swift in Sources */,
+				5808E9AB1BFED5AF00A85FED /* ListViewController.swift in Sources */,
 				584104D61BFD8674006BF83F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +300,7 @@
 				584104E61BFD8674006BF83F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

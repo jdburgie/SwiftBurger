@@ -12,19 +12,55 @@ import UIKit
 class HamburgerViewController: UIViewController {
     // MARK: Properties
     
-    var backViewController: UIViewController!
-    var vanityViewController: UIViewController!
-    var frontViewController: UIViewController!
+    var backViewController: UIViewController = UIViewController()
+    var vanityViewController: UIViewController = UIViewController()
+    var frontViewController: UIViewController = UIViewController()
     
     var vanityViewInFrame: CGRect = CGRectZero
     var vanityViewOutFrame: CGRect = CGRectZero
+    
     var sideViewWidthPercent: CGFloat = 0.5
+    
     var right: Bool = false
+    
+    // MARK: View Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var vanityFrame: CGRect = view.frame
+        
+        let vanityWidth: CGFloat = view.frame.size.width * 0.05
+        
+        vanityFrame.size.width = vanityWidth
+        vanityFrame.origin.x = view.frame.size.width
+        vanityViewOutFrame = vanityFrame
+        
+        vanityFrame.origin.x = view.frame.size.width - vanityWidth + 1
+        vanityViewInFrame = vanityFrame
+        
+        vanityViewController.view.frame = vanityViewInFrame
+        
+        addChildVC(vanityViewController)
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        var vanityFrame: CGRect = vanityViewController.view.frame
+        let vanityWidth: CGFloat = view.frame.size.width * 0.05
+        
+        vanityFrame.size.width = vanityWidth
+        vanityFrame.origin.x = view.frame.size.width
+        vanityViewOutFrame = vanityFrame
+        
+        vanityFrame.origin.x = view.frame.size.width - vanityWidth + 1.0
+        vanityViewInFrame = vanityFrame
+    }
     
     // MARK: Convenience
     
     func addChildVC(viewController: UIViewController) {
         var index: NSInteger = 0
+        
         let subViews: NSArray = view .subviews
         
         if (backViewController.self == viewController.self) {
@@ -50,13 +86,13 @@ class HamburgerViewController: UIViewController {
         vanityViewController.view.frame = vanityViewOutFrame;
         
         UIView .animateWithDuration(0.25, animations: { () -> Void in
-            var frame: CGRect = self.frontViewController.view.frame
+            var frame: CGRect = frontViewController.view.frame
             
             // Move frontViewController view off the screen to the right
             frame.origin.x = self.view.frame.size.width
             frontViewController.view.frame = frame
             }) { (Bool finished) -> Void in
-                self.swapFrontChildViewController(self.frontViewController, newViewController: frontViewController)
+                self.swapFrontChildViewController(frontViewController, newViewController: frontViewController)
                 self.showHideSideView()
         }
     }
@@ -83,43 +119,14 @@ class HamburgerViewController: UIViewController {
             } else {
                 frame.origin.x = frame.size.width * self.sideViewWidthPercent
             }
-            }) { (Bool finished) -> Void in
-                
-        }
+            
+            })
+            { (Bool finished) -> Void in }
         
         right = !right;
     }
     
-    // MARK: View Life Cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        var vanityFrame: CGRect = self.view.frame
-
-        let vanityWidth: CGFloat = view.frame.size.width * 0.05
-        
-        vanityFrame.size.width = vanityWidth
-        vanityFrame.origin.x = view.frame.size.width
-        vanityViewOutFrame = vanityFrame
-        
-        vanityFrame.origin.x = view.frame.size.width - vanityWidth + 1
-        vanityViewInFrame = vanityFrame
-        
-        vanityViewController.view.frame = vanityViewInFrame
-        
-        addChildVC(vanityViewController)
-    }
-
-    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        var vanityFrame: CGRect = vanityViewController.view.frame
-        let vanityWidth: CGFloat = view.frame.size.width * 0.05
-        
-        vanityFrame.size.width = vanityWidth
-        vanityFrame.origin.x = view.frame.size.width
-        vanityViewOutFrame = vanityFrame
-        
-        vanityFrame.origin.x = view.frame.size.width - vanityWidth + 1.0
-        vanityViewInFrame = vanityFrame
+    @IBAction func tappedHamburger() {
+        showHideSideView()
     }
 }
