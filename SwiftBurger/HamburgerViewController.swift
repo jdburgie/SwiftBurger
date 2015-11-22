@@ -12,7 +12,7 @@ import UIKit
 class HamburgerViewController: UIViewController {
     // MARK: Properties
     
-    var backViewController: UIViewController = UIViewController()
+    var backViewController: ListViewController = ListViewController()
     var vanityViewController: UIViewController = UIViewController()
     var frontViewController: UIViewController = UIViewController()
     
@@ -61,7 +61,7 @@ class HamburgerViewController: UIViewController {
     func addChildVC(viewController: UIViewController) {
         var index: NSInteger = 0
         
-        let subViews: NSArray = view .subviews
+        let subViews:NSArray = view.subviews
         
         if (backViewController.self == viewController.self) {
             index = 0
@@ -71,9 +71,9 @@ class HamburgerViewController: UIViewController {
             index = subViews.count + 1
         }
         
-        view .insertSubview(viewController.view, atIndex: index)
+        view.insertSubview(viewController.view, atIndex: index)
         
-        viewController .didMoveToParentViewController(self)
+        viewController.didMoveToParentViewController(self)
     }
     
     func removeChildViewController(viewController: UIViewController) {
@@ -110,18 +110,29 @@ class HamburgerViewController: UIViewController {
     }
     
     func showHideSideView() {
-        UIView .animateWithDuration(0.75, delay: 0.01, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.0, options: UIViewAnimationOptions .CurveEaseInOut, animations: { () -> Void in
-            self.vanityViewController.view.frame = self.vanityViewInFrame
-            var frame: CGRect = self.view.frame
-            
-            if (self.right) {
-                frame.origin.x = 0.0
-            } else {
-                frame.origin.x = frame.size.width * self.sideViewWidthPercent
-            }
-            
+        UIView .animateWithDuration(0.75,
+            delay: 0.01,
+            usingSpringWithDamping: 0.65,
+            initialSpringVelocity: 0.0,
+            options: UIViewAnimationOptions.CurveEaseInOut,
+            animations: { () -> Void in
+                
+                self.vanityViewController.view.frame = self.vanityViewInFrame
+                
+                var frame: CGRect = self.view.frame
+                
+                if (self.right) {
+                    frame.origin.x = 0.0
+                } else {
+                    frame.origin.x = frame.size.width * self.sideViewWidthPercent
+                }
+                
+                self.frontViewController.view.frame = frame
+                
             })
-            { (Bool finished) -> Void in }
+            { (Bool finished) -> Void in
+
+        }
         
         right = !right;
     }

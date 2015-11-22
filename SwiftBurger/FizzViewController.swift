@@ -18,7 +18,74 @@ class FizzViewController: UIViewController {
     // MARK: Convenience
     
     func fizzBuzzFactorial(number: NSInteger) {
+        var i:NSInteger
         
+        for (i = 1; i <= number; i++) {
+            var modThree:NSInteger = 0
+            var modFive:NSInteger = 0
+            
+            let fizzString:NSString = NSString(format: "%d", i)
+
+            let hasThree:Bool = fizzString .containsString("3")
+            let hasFive:Bool = fizzString .containsString("5")
+            
+            var isFizzOrBuzz:Bool = false
+            
+            modThree = i%3
+            modFive = i%5
+            
+            var fizzBuzzMsg:NSString!
+            if (((modThree == 0) && (modFive == 0)) || (hasThree && hasFive)) {
+                fizzBuzzMsg = "-> BizzBuzz"
+                isFizzOrBuzz = true
+            } else if (modThree == 0 || hasThree) {
+                fizzBuzzMsg = "-> Bizz"
+                isFizzOrBuzz = true
+            } else if (modFive == 0 || hasFive) {
+                fizzBuzzMsg = "-> Buzz"
+                isFizzOrBuzz = true
+            } else {
+                fizzBuzzMsg = NSString(format: "%d\n", i)
+                isFizzOrBuzz = false
+            }
+            
+            self.progressText.text = self.progressText.text .stringByAppendingString(fizzBuzzMsg as String)
+            
+            var factorialFizzBuzz:NSInteger = 1
+            
+            if (isFizzOrBuzz) {
+                var factorialMsg:NSString!
+                if (i > 20) {
+                    factorialMsg = NSString(format: " (Factorial of %ld is too big for long int)\n", i)
+                    self.progressText.text = self.progressText.text .stringByAppendingString(factorialMsg as String)
+                } else {
+                    var j:NSInteger
+
+                    for (j = i; j > 0; j--) {
+                        factorialFizzBuzz = factorialFizzBuzz * j
+                    }
+                    
+                    factorialMsg = NSString(format: "%d factorial by iteration %d, ", i, factorialFizzBuzz)
+                    
+                    self.progressText.text = self.progressText.text .stringByAppendingString(factorialMsg as String)
+                    
+                    factorialFizzBuzz = self .recurseFactorial(i)
+                    
+                    factorialMsg = NSString(format: " by recursion %d\n", factorialFizzBuzz)
+                    
+                    self.progressText.text = self.progressText.text .stringByAppendingString(factorialMsg as String)
+                }
+            }
+        }
+        
+        if (self.progressText.text == "") {
+            self.progressText.text = "Nothing to count."
+        }
+        
+        var endOfTextView:NSRange = NSRangeFromString("0,0")
+        endOfTextView.location = progressText.text.characters.count
+        endOfTextView.length = 1
+        self.progressText .scrollRangeToVisible(endOfTextView)
     }
     
     func removeChildViewController(viewController: UIViewController) {

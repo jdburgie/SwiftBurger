@@ -6,20 +6,21 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Hamburger View Controller-->
+        <!--SwiftBurger-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HamburgerViewController" customModule="SwiftBurger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SwiftBurger" id="BYZ-38-t0r" customClass="HamburgerViewController" customModule="SwiftBurger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.75294125079999996" green="0.93333339689999995" blue="0.83137261870000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lbd-dI-dZv">
                         <barButtonItem key="leftBarButtonItem" image="hamburger" id="y0N-6A-KJ6">
@@ -29,7 +30,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,7 +59,7 @@
         <!--Picture View Controller-->
         <scene sceneID="nXY-RF-kLo">
             <objects>
-                <viewController storyboardIdentifier="PictureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jzO-xh-Wk8" customClass="PictureViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PictureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jzO-xh-Wk8" customClass="PictureViewController" customModule="SwiftBurger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D38-v5-7mg"/>
                         <viewControllerLayoutGuide type="bottom" id="biu-wn-YvI"/>
@@ -88,7 +90,7 @@
         <!--Fizz View Controller-->
         <scene sceneID="4Ip-L1-70z">
             <objects>
-                <viewController storyboardIdentifier="FizzViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BpA-rr-aBu" customClass="FizzViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FizzViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BpA-rr-aBu" customClass="FizzViewController" customModule="SwiftBurger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YPt-8i-WmT"/>
                         <viewControllerLayoutGuide type="bottom" id="hf0-PE-mYv"/>
@@ -132,10 +134,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-bH-fRL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-bH-fRL">
                                 <rect key="frame" x="16" y="148" width="568" height="432"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.76016980410000001" green="0.88111656900000002" blue="0.77640134100000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
@@ -157,8 +159,8 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="numberString" destination="TtU-WE-Oj9" id="Lnu-OH-sle"/>
                         <outlet property="progressText" destination="mdz-bH-fRL" id="Trq-TV-IVd"/>
-                        <outlet property="theNumber" destination="TtU-WE-Oj9" id="A1a-4y-Omu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQq-9J-KIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,7 +170,7 @@
         <!--List View Controller-->
         <scene sceneID="0bn-n2-nCN">
             <objects>
-                <tableViewController storyboardIdentifier="ListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ntv-ZA-IfZ" customClass="ListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ntv-ZA-IfZ" customClass="ListViewController" customModule="SwiftBurger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jOI-kq-zLS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,7 +181,7 @@
                                 <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pHV-qu-9Ej" id="iIT-lz-L0p">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>

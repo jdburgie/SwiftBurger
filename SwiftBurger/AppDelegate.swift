@@ -16,12 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let hamburgerViewController: HamburgerViewController = HamburgerViewController()
+        let rootViewController:UINavigationController = self.window?.rootViewController as! UINavigationController
+        
+        let hamburgerViewController: HamburgerViewController = rootViewController.topViewController as! HamburgerViewController
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        hamburgerViewController.backViewController = storyboard .instantiateViewControllerWithIdentifier("ListViewController")
+        hamburgerViewController.backViewController = storyboard .instantiateViewControllerWithIdentifier("ListViewController") as! ListViewController
         hamburgerViewController.frontViewController = storyboard .instantiateViewControllerWithIdentifier("PictureViewController")
+        
+        hamburgerViewController.backViewController.hamburgerViewController = hamburgerViewController
         
         hamburgerViewController .addChildVC(hamburgerViewController.backViewController)
         hamburgerViewController .addChildVC(hamburgerViewController.frontViewController)

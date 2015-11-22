@@ -19,14 +19,14 @@ class ListViewController: UITableViewController {
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        hamburgerViewController = self .parentViewController as! HamburgerViewController
+        tableView .registerClass(UITableViewCell.self, forCellReuseIdentifier: "myIdent")
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rowLabels.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        tableView .registerClass(UITableViewCell.self, forHeaderFooterViewReuseIdentifier: "myIdent")
         
         let cell: UITableViewCell = tableView .dequeueReusableCellWithIdentifier("myIdent")!;
         
@@ -45,7 +45,7 @@ class ListViewController: UITableViewController {
         if (hamburgerViewController.frontViewController.self == viewController.self) {
             hamburgerViewController .showHideSideView()
         } else {
-            hamburgerViewController .presentFrontViewController(viewController);
+            hamburgerViewController.presentFrontViewController(viewController);
         }
 
     }
