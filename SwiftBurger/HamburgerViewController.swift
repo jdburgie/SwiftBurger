@@ -91,9 +91,10 @@ class HamburgerViewController: UIViewController {
             // Move frontViewController view off the screen to the right
             frame.origin.x = self.view.frame.size.width
             frontViewController.view.frame = frame
-            }) { (Bool finished) -> Void in
-                self.swapFrontChildViewController(frontViewController, newViewController: frontViewController)
-                self.showHideSideView()
+            })
+        { (finished) -> Void in
+            self.swapFrontChildViewController(frontViewController, newViewController: frontViewController)
+            self.showHideSideView()
         }
     }
     
@@ -111,28 +112,24 @@ class HamburgerViewController: UIViewController {
     
     func showHideSideView() {
         UIView .animateWithDuration(0.75,
-            delay: 0.01,
-            usingSpringWithDamping: 0.65,
-            initialSpringVelocity: 0.0,
-            options: UIViewAnimationOptions.CurveEaseInOut,
-            animations: { () -> Void in
-                
-                self.vanityViewController.view.frame = self.vanityViewInFrame
-                
-                var frame: CGRect = self.view.frame
-                
-                if (self.right) {
-                    frame.origin.x = 0.0
-                } else {
-                    frame.origin.x = frame.size.width * self.sideViewWidthPercent
-                }
-                
-                self.frontViewController.view.frame = frame
-                
-            })
-            { (Bool finished) -> Void in
-
-        }
+                                    delay: 0.01,
+                                    usingSpringWithDamping: 0.65,
+                                    initialSpringVelocity: 0.0,
+                                    options: UIViewAnimationOptions.CurveEaseInOut,
+                                    animations: { () -> Void in
+                                        
+                                        self.vanityViewController.view.frame = self.vanityViewInFrame
+                                        
+                                        var frame: CGRect = self.view.frame
+                                        
+                                        if (self.right) {
+                                            frame.origin.x = 0.0
+                                        } else {
+                                            frame.origin.x = frame.size.width * self.sideViewWidthPercent
+                                        }
+                                        
+                                        self.frontViewController.view.frame = frame})
+        { (finished) -> Void in }
         
         right = !right;
     }

@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5808E9AA1BFED5AF00A85FED /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		5808E9AE1BFEE05C00A85FED /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureViewController.swift; path = ../PictureViewController.swift; sourceTree = "<group>"; };
+		5808E9AE1BFEE05C00A85FED /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		584104D21BFD8674006BF83F /* SwiftBurger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBurger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584104D51BFD8674006BF83F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		584104DA1BFD8674006BF83F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,16 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				584104D51BFD8674006BF83F /* AppDelegate.swift */,
-				584104DC1BFD8674006BF83F /* Assets.xcassets */,
 				584104E91BFDA586006BF83F /* FizzViewController.swift */,
 				584104E71BFD87AD006BF83F /* HamburgerViewController.swift */,
-				584104E11BFD8674006BF83F /* Info.plist */,
-				584104DE1BFD8674006BF83F /* LaunchScreen.storyboard */,
 				5808E9AA1BFED5AF00A85FED /* ListViewController.swift */,
-				584104D91BFD8674006BF83F /* Main.storyboard */,
 				5808E9AE1BFEE05C00A85FED /* PictureViewController.swift */,
+				7ADF00621D6B8DFC0067BCB1 /* Supporting Files */,
 			);
 			path = SwiftBurger;
+			sourceTree = "<group>";
+		};
+		7ADF00621D6B8DFC0067BCB1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				584104DC1BFD8674006BF83F /* Assets.xcassets */,
+				584104E11BFD8674006BF83F /* Info.plist */,
+				584104DE1BFD8674006BF83F /* LaunchScreen.storyboard */,
+				584104D91BFD8674006BF83F /* Main.storyboard */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
