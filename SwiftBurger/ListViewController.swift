@@ -13,8 +13,8 @@ class ListViewController: UITableViewController {
 
     var hamburgerViewController: HamburgerViewController!
     
-    var rowLabels: [String] = [ "Pictures", "Bizz Buzz" ]
-    var viewControllerNames: [String] = [ "PictureViewController", "FizzViewController" ]
+    var rowLabels: [String] = [ "Pictures", "Bizz Buzz", "Factorial" ]
+    var viewControllerNames: [String] = [ "PictureViewController", "FizzViewController", "FactorialViewController" ]
     
     // MARK: View Life Cycle
     

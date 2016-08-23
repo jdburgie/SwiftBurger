@@ -113,7 +113,7 @@
                                     <constraint firstAttribute="height" constant="30" id="XTY-3O-a9V"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                <state key="normal" title="Run it or drink!"/>
+                                <state key="normal" title="Run Bizz Buzz"/>
                                 <connections>
                                     <action selector="tappedRunIt:" destination="BpA-rr-aBu" eventType="touchUpInside" id="AxZ-NB-9Ye"/>
                                 </connections>
