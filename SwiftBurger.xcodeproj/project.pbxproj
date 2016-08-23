@@ -15,6 +15,7 @@
 		584104E01BFD8674006BF83F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584104DE1BFD8674006BF83F /* LaunchScreen.storyboard */; };
 		584104E81BFD87AD006BF83F /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584104E71BFD87AD006BF83F /* HamburgerViewController.swift */; };
 		584104EA1BFDA586006BF83F /* FizzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584104E91BFDA586006BF83F /* FizzViewController.swift */; };
+		58762BBD1D6C10A500DC752B /* FactorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58762BBC1D6C10A500DC752B /* FactorialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		584104E11BFD8674006BF83F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		584104E71BFD87AD006BF83F /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		584104E91BFDA586006BF83F /* FizzViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FizzViewController.swift; sourceTree = "<group>"; };
+		58762BBC1D6C10A500DC752B /* FactorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactorialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				584104D51BFD8674006BF83F /* AppDelegate.swift */,
+				58762BBC1D6C10A500DC752B /* FactorialViewController.swift */,
 				584104E91BFDA586006BF83F /* FizzViewController.swift */,
 				584104E71BFD87AD006BF83F /* HamburgerViewController.swift */,
 				5808E9AA1BFED5AF00A85FED /* ListViewController.swift */,
@@ -156,6 +159,7 @@
 				584104EA1BFDA586006BF83F /* FizzViewController.swift in Sources */,
 				5808E9AF1BFEE05C00A85FED /* PictureViewController.swift in Sources */,
 				5808E9AB1BFED5AF00A85FED /* ListViewController.swift in Sources */,
+				58762BBD1D6C10A500DC752B /* FactorialViewController.swift in Sources */,
 				584104D61BFD8674006BF83F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

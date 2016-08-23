@@ -66,7 +66,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="beer.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1Ve-cc-DUl">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="1Ve-cc-DUl">
                                 <rect key="frame" x="16" y="72" width="204" height="240"/>
                             </imageView>
                         </subviews>
@@ -82,6 +82,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sns-ff-P5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2455" y="866"/>
+        </scene>
+        <!--Factorial View Controller-->
+        <scene sceneID="JGW-8s-bkm">
+            <objects>
+                <viewController storyboardIdentifier="FactorialViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kli-g6-A88" customClass="FactorialViewController" customModule="SwiftBurger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ygd-hv-Hr4"/>
+                        <viewControllerLayoutGuide type="bottom" id="4lX-xR-ebH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0VC-Ph-uiM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a number ≤ 20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-tF-Y4B">
+                                <rect key="frame" x="125" y="32" width="167" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="6TK-Gr-d1X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSC-ex-2yb">
+                                <rect key="frame" x="20" y="28" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="5Lz-6C-1gm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0t-GZ-Bza">
+                                <rect key="frame" x="20" y="99" width="167" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="yuy-xl-aeB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXu-1p-0I1">
+                                <rect key="frame" x="125" y="61" width="121" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="QfP-LK-Zk9"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Factorial!"/>
+                                <connections>
+                                    <action selector="tappedRunIt:" destination="kli-g6-A88" eventType="touchUpInside" id="0cS-sc-ykt"/>
+                                    <action selector="tappedRunIt:" destination="BpA-rr-aBu" eventType="touchUpInside" id="jN0-ft-iNe"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="answer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U87-7w-Wql">
+                                <rect key="frame" x="20" y="128" width="560" height="452"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dSC-ex-2yb" firstAttribute="leading" secondItem="h0t-GZ-Bza" secondAttribute="leading" id="8eF-ey-W5d"/>
+                            <constraint firstItem="dSC-ex-2yb" firstAttribute="leading" secondItem="0VC-Ph-uiM" secondAttribute="leadingMargin" id="8uQ-YE-MbL"/>
+                            <constraint firstItem="h0t-GZ-Bza" firstAttribute="top" secondItem="HXu-1p-0I1" secondAttribute="bottom" constant="8" symbolic="YES" id="ApU-yg-KdP"/>
+                            <constraint firstItem="jwL-tF-Y4B" firstAttribute="leading" secondItem="HXu-1p-0I1" secondAttribute="leading" id="CnA-Pr-Dp2"/>
+                            <constraint firstItem="h0t-GZ-Bza" firstAttribute="top" secondItem="dSC-ex-2yb" secondAttribute="bottom" constant="41" id="Giv-Ln-omZ"/>
+                            <constraint firstItem="jwL-tF-Y4B" firstAttribute="leading" secondItem="dSC-ex-2yb" secondAttribute="trailing" constant="8" symbolic="YES" id="LNv-eX-4ov"/>
+                            <constraint firstItem="dSC-ex-2yb" firstAttribute="top" secondItem="Ygd-hv-Hr4" secondAttribute="bottom" constant="8" symbolic="YES" id="VKw-Ci-erd"/>
+                            <constraint firstItem="U87-7w-Wql" firstAttribute="top" secondItem="h0t-GZ-Bza" secondAttribute="bottom" constant="8" symbolic="YES" id="XLh-Mn-IZj"/>
+                            <constraint firstItem="HXu-1p-0I1" firstAttribute="top" secondItem="jwL-tF-Y4B" secondAttribute="bottom" constant="8" symbolic="YES" id="YVk-0c-HZs"/>
+                            <constraint firstItem="U87-7w-Wql" firstAttribute="trailing" secondItem="0VC-Ph-uiM" secondAttribute="trailingMargin" id="gz6-pX-YqG"/>
+                            <constraint firstItem="dSC-ex-2yb" firstAttribute="centerY" secondItem="jwL-tF-Y4B" secondAttribute="centerY" id="lSa-Hi-Osb"/>
+                            <constraint firstAttribute="bottom" secondItem="U87-7w-Wql" secondAttribute="bottom" constant="20" symbolic="YES" id="vET-iC-Yfg"/>
+                            <constraint firstItem="h0t-GZ-Bza" firstAttribute="leading" secondItem="U87-7w-Wql" secondAttribute="leading" id="zNt-ax-Lm5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answer" destination="U87-7w-Wql" id="Lkc-DG-XOw"/>
+                        <outlet property="numberString" destination="dSC-ex-2yb" id="pRx-aa-oba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASD-W1-RvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455" y="1559"/>
         </scene>
         <!--Fizz View Controller-->
         <scene sceneID="4Ip-L1-70z">
@@ -129,7 +213,7 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-bH-fRL">
                                 <rect key="frame" x="16" y="148" width="568" height="432"/>
-                                <color key="backgroundColor" red="0.76016980410000001" green="0.88111656900000002" blue="0.77640134100000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97599999999999998" green="0.875" blue="0.61199999999999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
@@ -188,7 +272,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="beer.jpg" width="32" height="32"/>
+        <image name="beer" width="102" height="120"/>
         <image name="hamburger" width="32" height="32"/>
     </resources>
 </document>

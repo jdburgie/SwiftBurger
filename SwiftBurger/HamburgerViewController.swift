@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class HamburgerViewController: UIViewController {
-    // MARK: Properties
     
     var backViewController: ListViewController = ListViewController()
     var vanityViewController: UIViewController = UIViewController()
@@ -23,14 +22,12 @@ class HamburgerViewController: UIViewController {
     
     var right: Bool = false
     
-    // MARK: View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var vanityFrame: CGRect = view.frame
         
-        let vanityWidth: CGFloat = view.frame.size.width * 0.05
+        let vanityWidth: CGFloat = view.frame.size.width * 0.1
         
         vanityFrame.size.width = vanityWidth
         vanityFrame.origin.x = view.frame.size.width
@@ -55,8 +52,6 @@ class HamburgerViewController: UIViewController {
         vanityFrame.origin.x = view.frame.size.width - vanityWidth + 1.0
         vanityViewInFrame = vanityFrame
     }
-    
-    // MARK: Convenience
     
     func addChildVC(viewController: UIViewController) {
         var index: NSInteger = 0
@@ -121,6 +116,7 @@ class HamburgerViewController: UIViewController {
                                         self.vanityViewController.view.frame = self.vanityViewInFrame
                                         
                                         var frame: CGRect = self.view.frame
+                                        frame.origin.y = 0.0
                                         
                                         if (self.right) {
                                             frame.origin.x = 0.0
